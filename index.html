@@ -14,33 +14,34 @@
     <title>Coding Quiz Challenge</title>
 </head>
 <body>
-    <!--<div class="vh-100 d-flex justify-content-center align-items-center">
-        <header class="">
-            <h1 class="text-center d-flex justify-content-around">
-                Coding Quiz Challenge
-            </h1>
-            <p class="d flex justify-content-around">
-                Try to answer code-related questions within the time limit. Keep in mind incorrect scores will penalize your score/time by ten seconds!
-            </p>
-            <div class="d-flex justify-content-around">
-                <button class="btn" id="btn-start" type="submit">Add Task or Item</button>
+
+    <header>
+        <div id="startScreen">
+            <div class="row d-flex justify-content-center align-items-center">
+            <h1>Coding Quiz Challenge</h1>
+            <p >Try to answer the following code-related questions within the time limit<br/>Keep in mind that incorrect answers will penalize your score/time<br/>by ten seconds!</p>
             </div>
-        </header>
+            
+        </div>
+    </header>
 
-        <main>
+    <div class="quiz-container">
+        <div id="quiz"></div>
+        <div id="countdown">
+            <div>
+            <span class="seconds"></span>
+            <div class="smalltext">Seconds</div>
+            </div>
+        </div>
+        <div id="high-scores">
+            <a href="#">View High Scores</a>
+        </div>
+    </div>
 
-        </main>
-    </div>-->
-
-<h1>Coding Quiz Challenge</h1>
-<div class="quiz-container">
-  <div id="quiz"></div>
-</div>
-<button id="previous">Previous Question</button>
-<button id="next">Next Question</button>
-<button id="submit">Submit Quiz</button>
-<div id="results"></div>
-    
+    <button id="previous">Previous Question</button>
+    <button id="next">Next Question</button>
+    <button id="submit">Submit Quiz</button>
+    <div id="results"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
