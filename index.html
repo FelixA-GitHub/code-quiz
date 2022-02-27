@@ -13,36 +13,48 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Coding Quiz Challenge</title>
 </head>
-<body>
-    
+<body onload="setup()">
+   <!-- <div class="container h-100">
+       <div class="row h-100 justify-content-center align-items-center">
+           <div class="box">
+                <h1 id="questionNum" class="question-num row h-100 justify-content-center align-items-center">Coding Quiz Challenge</h1>
+                <p id="question" class="">Question</p>
+                <input id="text-field" type="text" class="form-control">
+                <input id="button" type="submit" value="Submit" class="btn btn primary btn-block" onclick="clickButton();">
+           </div>
+       </div>
+   </div>  -->
 
-   <!--<header>
-        <div id="startScreen">
+   <header>
+        <div id="container h-100">
+            
             <div class="row d-flex justify-content-center align-items-center">
-            <h1>Coding Quiz Challenge</h1>
-            <p >Try to answer the following code-related questions within the time limit<br/>Keep in mind that incorrect answers will penalize your score/time<br/>by ten seconds!</p>
+                
+                <div id="high-scores" class="mb-auto px-3 py-4">
+                    <a href="#">View High Scores</a>
+                </div>
+                <div class="box">
+                    <h1>Coding Quiz Challenge</h1>
+                    <p>Try to answer the following code-related questions within the time limit<br/>Keep in mind that incorrect answers will penalize your score/time<br/>by ten seconds!</p>
+                    <div class="quiz-container">
+                        <div id="quiz"></div>
+                    </div>
+                    <button id="previous">Previous Question</button>
+                    <button id="next">Next Question</button>
+                    <button id="submit">Submit Quiz</button>
+                    <div id="results"></div>
+                </div>
+                <div id="countdown" class="mb-auto px-3 py-4">
+                    <div>
+                    <span class="seconds"></span>
+                    <div class="smalltext">Seconds</div>
+                    </div>
+                </div>
             </div>
             
         </div>
     </header>
 
-    <div class="quiz-container">
-        <div id="quiz"></div>
-        <div id="countdown">
-            <div>
-            <span class="seconds"></span>
-            <div class="smalltext">Seconds</div>
-            </div>
-        </div>
-        <div id="high-scores">
-            <a href="#">View High Scores</a>
-        </div>
-    </div>
-
-    <button id="previous">Previous Question</button>
-    <button id="next">Next Question</button>
-    <button id="submit">Submit Quiz</button>
-    <div id="results"></div>-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

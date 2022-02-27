@@ -103,6 +103,9 @@ myQuestions.forEach( (currentQuestion, questionNumber) => {
 
     // color the answers green
     answerContainers[questionNumber].style.color = 'lightgreen';
+    
+    // show next slide
+    
     }
     // if answer is wrong or blank
     else{
@@ -152,52 +155,52 @@ const myQuestions = [
     {
         question: "String values must be enclosed within _______ when being assigned to variables.",
         answers: {
-            1: "Commas",
-            2: "Curly braces",
-            3: "Quotes",
-            4: "Brackets"
+            A: "Commas",
+            B: "Curly braces",
+            C: "Quotes",
+            D: "Brackets"
         },
-        correctAnswer: "3"
+        correctAnswer: "C"
     },
     {
         question: "Commonly used data types DO NOT include...",
         answers: {
-            1: "Strings",
-            2: "Booleans",
-            3: "Alerts",
-            4: "Numbers"
+            A: "Strings",
+            B: "Booleans",
+            C: "Alerts",
+            D: "Numbers"
         },
-        correctAnswer: "3"
+        correctAnswer: "C"
     },
     {
         question: "The condition in an IF/ELSE statement is enclosed with _______.",
         answers: {
-            1: "Quotes",
-            2: "Curly braces",
-            3: "Parenthesis",
-            4: "Square Brackets"
+            A: "Quotes",
+            B: "Curly braces",
+            C: "Parenthesis",
+            D: "Square Brackets"
         },
-        correctAnswer: "3"
+        correctAnswer: "C"
     },
     {
         question: "Arrays in JavaScript can be used to store _______.",
         answers: {
-            1: "Numbers and strings",
-            2: "Booleans",
-            3: "Other arrays",
-            4: "All of the above"
+            A: "Numbers and strings",
+            B: "Booleans",
+            C: "Other arrays",
+            D: "All of the above"
         },
-        correctAnswer: "4"
+        correctAnswer: "D"
     },
     {
         question: "Useful tool during developement and debugging for printing content to the debugger is _______.",
         answers: {
-            1: "console.log",
-            2: "JavaScript",
-            3: "Terminal bash",
-            4: "for loops"
+            A: "console.log",
+            B: "JavaScript",
+            C: "Terminal bash",
+            D: "for loops"
         },
-        correctAnswer: "1"
+        correctAnswer: "A"
     }
     ];
 
@@ -218,5 +221,40 @@ submitButton.addEventListener("click", showResults);
 previousButton.addEventListener("click", showPreviousSlide);
 nextButton.addEventListener("click", showNextSlide);
 
+// const questions = [
+//     ["Useful tool during developement and debugging for printing content to the debugger is _______.", "console.log"],
+//     ["Arrays in JavaScript can be used to store _______.","All of the above"]
+// ];
 
+// var questionNum = 0;
+// var score = 0;
+
+// function clickButton() {
+//     questions.shift();
+//     questionNum++;
+//     setup();
+//     console.log("text");
+// }
+
+// function setup() {
+    
+//     if (questions.length != 0) {
+//         document.getElementById("questionNum").innerHTML = "Question " + questionNum;
+//         document.getElementById("question").innerHTML = questions[0][0]; 
+//     }
+//     else {
+//         document.getElementById("questionNum").innerHTML = "You're Done!";
+//         document.getElementById("question").innerHTML = "Your score is: " + score;
+//         document.getElementById("text-field").remove();
+//         document.getElementById("button").remove();
+//     }
+// }
+
+// function check() {
+//     if (document.getElementById("text-field").value == question[0][1]){
+//         console.log("current");
+//         score++;
+//         document.getElementById("text-field").value = "";
+//     }
+// }
 

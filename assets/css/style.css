@@ -1,3 +1,25 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+input {
+    margin-top: 20px;
+
+}
+
+.box {
+    padding: 40px;
+    width: 500px;
+    -webkit-box-shadow: -1px 8px 15px rgba(0,0,0,0.5);
+    -moz-box-shadow: -1px 8px 15px rgba(0,0,0,0.5);
+    box-shadow: -1px 8px 15px rgba(0,0,0,0.5);
+}
+
+
 
 .slide{
     position: absolute;
@@ -20,16 +42,3 @@
     margin-top: 40px;
 }
 
-#countdown {
-    position: absolute;
-    right: 2px;
-    top: -175px;
-
-}
-
-#high-scores {
-    position: absolute;
-    left: 2px;
-    top: -175px;
-
-}
