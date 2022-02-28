@@ -3,40 +3,25 @@
 // variables
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
+var submitButton = document.getElementById('submit');
+
+// main screen
+
 
 // timer
 
-function getTimeRemaining(endtime) {
-    const total = Date.parse(endtime) - Date.parse(new Date());
-    const seconds = Math.floor((total / 1000) % 60);
-  
-    
-    return {
-      total,
-      seconds
-    };
+var timeLeft = 30;
+var downloadTimer = setInterval(function(){
+  if(timeLeft === 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Game Over!";
+  } else if(timeLeft <= 10) {
+    document.getElementById("countdown").innerHTML = timeLeft + " seconds remaining";
+  } else {
+    document.getElementById("countdown").innerHTML = timeLeft + " seconds";
   }
-  
-  function initializeClock(id, endtime) {
-    const clock = document.getElementById(id);
-    const secondsSpan = clock.querySelector('.seconds');
-  
-    function updateClock() {
-      const t = getTimeRemaining(endtime);
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-  
-      if (t.total <= 0) {
-        clearInterval(timeinterval);
-      }
-    }
-  
-    updateClock();
-    const timeinterval = setInterval(updateClock, 1000);
-  }
-  
-  const deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-  initializeClock('countdown', deadline);
+  timeLeft -= 1;
+}, 1000);
 
 
 // function to build quiz
@@ -101,21 +86,17 @@ myQuestions.forEach( (currentQuestion, questionNumber) => {
     // add to the number of correct answers
     numCorrect++;
 
-    // color the answers green
-    answerContainers[questionNumber].style.color = 'lightgreen';
-    
-    // show next slide
-    
     }
-    // if answer is wrong or blank
-    else{
-    // color the answers red
-    answerContainers[questionNumber].style.color = 'red';
+    // if answer is incorrect
+    else {
+    
     }
 });
 
 // show number of correct answers out of total
 resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+clearInterval(downloadTimer);
+
 }
 
 // function to show slide with quiz question
@@ -123,15 +104,11 @@ function showSlide(n) {
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
     currentSlide = n;
-    if(currentSlide === 0){
-        previousButton.style.display = 'none';
-    }
-    else{
-        previousButton.style.display = 'inline-block';
-    }
+    
     if(currentSlide === slides.length-1){
         nextButton.style.display = 'none';
         submitButton.style.display = 'inline-block';
+       // submitButton = document.location='./index.html'; restarts questions but wipes everything
     }
     else{
         nextButton.style.display = 'inline-block';
@@ -144,10 +121,6 @@ function showNextSlide() {
     showSlide(currentSlide + 1);
 }
 
-// slides to previous slide when click next question button
-function showPreviousSlide() {
-    showSlide(currentSlide - 1);
-}
 
 // quiz questions
 const myQuestions = [
@@ -209,7 +182,6 @@ const myQuestions = [
 buildQuiz();
 
 // pagination of slides/quiz questions
-const previousButton = document.getElementById("previous");
 const nextButton = document.getElementById("next");
 const slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
@@ -218,9 +190,9 @@ showSlide(currentSlide);
 
 // event listeners
 submitButton.addEventListener("click", showResults);
-previousButton.addEventListener("click", showPreviousSlide);
 nextButton.addEventListener("click", showNextSlide);
 
+//test attempts
 // const questions = [
 //     ["Useful tool during developement and debugging for printing content to the debugger is _______.", "console.log"],
 //     ["Arrays in JavaScript can be used to store _______.","All of the above"]
